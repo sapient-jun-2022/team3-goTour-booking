@@ -1,1 +1,39 @@
 GET http://localhost:3000/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/booking HTTP/1.1
+Content-Type: application/json
+
+{
+    "user": "Irshad Mulani",
+    "bookings": [
+       {
+         "bookingId": 123,
+         "booking": "booked",
+         "source": "go-tour app",
+         "travel": {"start":"2022-07-24T18:30:00.000Z", "end":"2022-07-27T18:30:00.000Z"},
+         "people": ["2 adults", "1 children"]
+       }
+    ],
+    "payments": [
+        {
+        "invoice_number": 1234,
+        "payment_method": "credit card",
+        "payment_date": "2022-07-27T18:30:00.000Z",
+        "amount": 1200
+        }
+    ]
+}
+
+###
+
+GET http://localhost:3000/booking HTTP/1.1
+
+###
+
+GET http://localhost:3000/booking/62b9eb23349cecab377d2063 HTTP/1.1
+
+### 
+
+DELETE http://localhost:3000/booking/62bae33f2a3bec69554c7df8 HTTP/1.1
