@@ -7,12 +7,13 @@ require('dotenv').config()
 
 const app = express();
 const port = process.env.PORT;
+const mongoUri = process.env.MONGODB_URI;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json({type:"application/json"}));
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/sap_db', {useNewUrlParser: true});
+mongoose.connect(mongoUri, {useNewUrlParser: true});
 
 routes(app);
 

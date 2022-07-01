@@ -1,11 +1,13 @@
-import {home} from "../controllers/booking-controller";
 import {
+    home,
     getAllBooking, 
     addBooking, 
     getBookingById, 
     updateBooking, 
     deleteBooking
 } from '../controllers/booking-controller';
+
+import httpProxy from 'express-http-proxy';
 
 const routes = (app) => {
     app.route("/")
